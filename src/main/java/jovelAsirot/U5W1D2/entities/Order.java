@@ -2,7 +2,7 @@ package jovelAsirot.U5W1D2.entities;
 
 import jovelAsirot.U5W1D2.enums.OrderStatus;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +10,7 @@ public class Order {
     private int orderNumber;
     private OrderStatus status;
     private int numberOfSeats;
-    private LocalDateTime acquisitionTime;
+    private LocalDate acquisitionTime;
     private List<MenuItem> items = new ArrayList<>();
     private double totalAmount;
 
@@ -38,11 +38,11 @@ public class Order {
         this.numberOfSeats = numberOfSeats;
     }
 
-    public LocalDateTime getAcquisitionTime() {
+    public LocalDate getAcquisitionTime() {
         return acquisitionTime;
     }
 
-    public void setAcquisitionTime(LocalDateTime acquisitionTime) {
+    public void setAcquisitionTime(LocalDate acquisitionTime) {
         this.acquisitionTime = acquisitionTime;
     }
 

@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Component
 public class OrderHandler implements CommandLineRunner {
@@ -32,7 +32,7 @@ public class OrderHandler implements CommandLineRunner {
         order.setOrderNumber(1);
         order.setStatus(OrderStatus.IN_PROGRESS);
         order.setNumberOfSeats(4);
-        order.setAcquisitionTime(LocalDateTime.now());
+        order.setAcquisitionTime(LocalDate.now());
 
         order.getItems().add(menu.getItems().get(0));
         order.getItems().add(menu.getItems().get(2));

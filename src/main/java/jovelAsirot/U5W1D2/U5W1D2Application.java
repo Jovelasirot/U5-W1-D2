@@ -22,6 +22,8 @@ public class U5W1D2Application {
         Menu menu = ctx.getBean(Menu.class);
         OrderSupplier orderSupplier = ctx.getBean(OrderSupplier.class);
 
+        System.out.println();
+
         generateAndPrintOrders(orderSupplier, menu);
 
     }

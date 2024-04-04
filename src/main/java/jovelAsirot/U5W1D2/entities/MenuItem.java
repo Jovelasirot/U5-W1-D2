@@ -1,6 +1,6 @@
 package jovelAsirot.U5W1D2.entities;
 
-public abstract class MenuItem {
+public class MenuItem {
     protected String name;
     protected double price;
 
@@ -26,5 +26,14 @@ public abstract class MenuItem {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return Double.compare(menuItem.price, price) == 0 &&
+                name.equals(menuItem.name);
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Random;
 import java.util.function.Supplier;
 
@@ -22,16 +22,18 @@ public class OrderSupplier {
     public Supplier<Order> getOrderSupplier(Menu menu) {
         Random rdm = new Random();
         OrderStatus[] orderStatuses = OrderStatus.values();
-        int orderNumber = 0;
+
 
         return () -> {
             int rdmStatusIndex = rdm.nextInt(orderStatuses.length);
+            int orderNumber = rdm.nextInt(1, 100);
+
 
             Order order = new Order();
-            order.setOrderNumber(orderNumber + 1);
+            order.setOrderNumber(orderNumber);
             order.setStatus(orderStatuses[rdmStatusIndex]);
             order.setNumberOfSeats(rdm.nextInt(1, 8));
-            order.setAcquisitionTime(LocalDateTime.now().plusDays(rdm.nextInt(0, 30)));
+            order.setAcquisitionTime(LocalDate.now().plusDays(rdm.nextInt(0, 30)));
 
 
             order.getItems().add(menu.getItems().get(rdm.nextInt(0, 3)));

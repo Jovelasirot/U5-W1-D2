@@ -20,4 +20,7 @@ public class Menu {
                 "items=" + items +
                 '}';
     }
+
+    public void addItem(String menuItemName, double itemPrice) {
+    }
 }
